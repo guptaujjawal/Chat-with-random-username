@@ -1,0 +1,21 @@
+<!doctype html>
+  <html>
+   <head>
+    <title>Chat Application</title>
+    <link rel='stylesheet' href='style.css' type='text/css'/>
+    <script src="lib/socket.io-1.2.0.js"></script>
+    <script src="lib/jquery-1.11.1.js"></script>
+    <script src="chat.js"></script>
+  </head>
+  <body>
+    <ul id="messages"></ul> <!--<ul> is used to list the chat message-->
+    <span id="notifyUser"></span><!--<span id=”notifyUser”> is used to notify user that another user is typing the message-->
+    <form id="form" action="" onsubmit="return submitfunction();" > <!--onsubmit Event: Execute a JavaScript when a form is submitted-->
+      <input type="hidden" id="user" value="" />
+      <input id="m" autocomplete="off" onkeyup="notifyTyping();" placeholder="Type yor message here.." /> <!--1. onkeyup : Execute a JavaScript when a user releases a key.
+    2. autocomplete: When autocomplete is on, the browser automatically complete values based on values that the user has entered before.
+    3. default type is: text.-->
+      <input type="submit" id="button" value="Send"/> 
+    </form>
+  </body>
+</html>
